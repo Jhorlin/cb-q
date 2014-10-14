@@ -1,0 +1,27 @@
+{
+  "name": "cbQ",
+  "version": "0.0.0",
+  "description": "Converts callbacks to promises and creates promises from callbacks.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test"
+  },
+  "keywords": [
+    "callback",
+    "q",
+    "deferred",
+    "promise"
+  ],
+  "author": "Jhorlin De Armas",
+  "license": "MIT",
+  "dependencies": {
+    "q": "^1.0.1"
+  },
+  "devDependencies": {
+    "mocha": "^1.21.5",
+    "should": "^4.0.4"
+  }
+}
