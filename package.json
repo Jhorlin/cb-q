@@ -23,5 +23,13 @@
   "devDependencies": {
     "mocha": "^1.21.5",
     "should": "^4.0.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jhorlin/cb-q.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jhorlin/cb-q/issues"
+  },
+  "homepage": "https://github.com/Jhorlin/cb-q"
 }
