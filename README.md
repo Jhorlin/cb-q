@@ -1,8 +1,11 @@
 cbQ
 ===
 
-Use cbQ to handle callbacks as a deferred object when a callback exists or create a deferred object when a callback does not exist.
-
+Use cb-q to handle callbacks as a deferred object when a callback exists or create a deferred object when a callback does not exist.
+## install
+```
+npm install cb-q
+```
 ## Motivation
 [Promises](https://github.com/kriskowal/q) is a great pattern but many libraries use [Error-First Callbacks](http://fredkschott.com/post/2014/03/understanding-error-first-callbacks-in-node-js/).
 Since the promise pattern returns a deferred object and asyncronous functions require a callback and usually return undefined, why can't we do both.
@@ -34,4 +37,8 @@ callback.promise.then(function(result){
     //handle error
 });
 fs.readFile('some-file.txt', callback);
+```
+## Test
+```
+npm test
 ```
