@@ -52,7 +52,7 @@ var callback = function(err, result){
     }
     console.log(result);
 }
-cbQ.resolve(callback, promise);
+cbQ.resolve(promise, callback);
 fs.readFile('some-file.txt', callback);
 ```
 ## Test

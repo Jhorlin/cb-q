@@ -1,22 +1,22 @@
 /**
  * Created by jhorlin.dearmas on 10/13/2014.
  */
-(function(module, q){
+(function (module, q) {
     "use strict";
     module.exports = {
         /**
-         * Resolves the promise and executes the callback
-         * @param {Function} cb
+         * Resolves the promise and executes the callback if there is a callback
          * @param {Object} promise
+         * @param {Function} cb
          * @return {Object} promise
          * @api public
          */
-        resolve: function(cb, promise){
-            return promise.then(function(result){
+        resolve: function (promise, cb) {
+            return (cb && typeof cb === "function") ? promise.then(function (result) {
                 cb(undefined, result);
-            },function(reason){
+            }, function (reason) {
                 cb(reason);
-            })
+            }) : promise;
         },
         /**
          * Creates a deferred object that when resolves it will execute the error first callback

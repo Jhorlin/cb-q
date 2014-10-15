@@ -19,12 +19,12 @@
         });
 
         it("should create a promise when a callback is specified", function (done) {
-            var cb = function(err, result){
-                try{
+            var cb = function (err, result) {
+                try {
                     should.not.exist(err);
                     result.should.equal(true);
                     done();
-                } catch(err) {
+                } catch (err) {
                     done(err);
                 }
             };
@@ -35,12 +35,12 @@
         });
 
         it("should create a promise when a callback is specified and reject the promise", function (done) {
-            var cb = function(err, result){
-                try{
+            var cb = function (err, result) {
+                try {
                     should.not.exist(result);
                     err.should.equal(true);
                     done();
-                } catch(err) {
+                } catch (err) {
                     done(err);
                 }
             };
@@ -50,32 +50,32 @@
             });
         });
 
-        it("it should create a callback function used to pass into nodejs cb(err, result) pattern methods", function(done){
-           var callback = cbQ.cb();
-           callback.promise.then(function(result){
-               try{
-                   result.should.equal(true);
-                   done();
-               } catch(err){
-                   done(err);
-               }
-           });
-            process.nextTick(function(){
+        it("it should create a callback function used to pass into nodejs cb(err, result) pattern methods", function (done) {
+            var callback = cbQ.cb();
+            callback.promise.then(function (result) {
+                try {
+                    result.should.equal(true);
+                    done();
+                } catch (err) {
+                    done(err);
+                }
+            });
+            process.nextTick(function () {
                 callback(undefined, true);
             });
         });
 
-        it("should execute callback function when a promise has already been resolve", function(done){
-           var deferred = cbQ.defer();
-           deferred.resolve(true);
-           cbQ.resolve(function(err, result){
-               try{
-                   result.should.equal(true);
-                   done(err);
-               } catch(ex){
-                   done(ex);
-               }
-           }, deferred.promise);
+        it("should execute callback function when a promise has already been resolve", function (done) {
+            var deferred = cbQ.defer();
+            deferred.resolve(true);
+            cbQ.resolve(deferred.promise, function (err, result) {
+                try {
+                    result.should.equal(true);
+                    done(err);
+                } catch (ex) {
+                    done(ex);
+                }
+            });
         });
 
     });
