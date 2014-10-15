@@ -65,5 +65,18 @@
             });
         });
 
+        it("should execute callback function when a promise has already been resolve", function(done){
+           var deferred = cbQ.defer();
+           deferred.resolve(true);
+           cbQ.resolve(function(err, result){
+               try{
+                   result.should.equal(true);
+                   done(err);
+               } catch(ex){
+                   done(ex);
+               }
+           }, deferred.promise);
+        });
+
     });
 }(require('should'), require('../index')))

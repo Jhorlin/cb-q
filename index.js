@@ -5,9 +5,24 @@
     "use strict";
     module.exports = {
         /**
+         * Resolves the promise and executes the callback
+         * @param {Function} cb
+         * @param {Object} promise
+         * @return {Object} promise
+         * @api public
+         */
+        resolve: function(cb, promise){
+            return promise.then(function(result){
+                cb(undefined, result);
+            },function(reason){
+                cb(reason);
+            })
+        },
+        /**
          * Creates a deferred object that when resolves it will execute the error first callback
-         * @param {function} cb
-         * @returns {*}
+         * @param {Function} cb
+         * @returns {Object} deferred
+         * @api public
          */
         defer: function (cb) {
             var deferred = q.defer();
@@ -22,7 +37,8 @@
         },
         /**
          * Creates an error first callback function that resolves into a promise
-         * @returns {callBack}
+         * @returns {Function} callback
+         * @api public
          */
         cb: function () {
             var deferred = q.defer(),

@@ -1,6 +1,6 @@
 {
   "name": "cb-q",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Converts callbacks to promises and creates promises from callbacks.",
   "main": "index.js",
   "directories": {

@@ -40,6 +40,21 @@ callback.promise.then(function(result){
 });
 fs.readFile('some-file.txt', callback);
 ```
+If you already have a promise and simply want to execute a callback when the promise is resolve
+``` javascript
+var cbQ = require('cb-q');
+var deferred = q.defer();
+var promise = deferred.promise;
+deferred.resolve('resolved');
+var callback = function(err, result){
+    if(err){
+        throw(err);
+    }
+    console.log(result);
+}
+cbQ.resolve(callback, promise);
+fs.readFile('some-file.txt', callback);
+```
 ## Test
 ```
 npm test
