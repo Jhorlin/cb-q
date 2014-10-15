@@ -7,7 +7,7 @@
         /**
          * Resolves the promise and executes the callback if there is a callback
          * @param {Object} promise
-         * @param {Function} cb
+         * @param {Function} [cb]
          * @return {Object} promise
          * @api public
          */
