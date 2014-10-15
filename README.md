@@ -1,4 +1,4 @@
-cbQ
+cb-q
 ===
 
 Use cb-q to handle callbacks as a deferred object when a callback exists or create a deferred object when a callback does not exist.
@@ -13,6 +13,7 @@ Since the promise pattern returns a deferred object and asyncronous functions re
 ## Usage
 Create an async function than handel both callbacks and promises.
 ``` javascript
+var cbQ = require('cb-q');
 asyncFunction(foo, cb()){
     var deferred = cbQ.defer(cb);
     //do some async stuff
@@ -30,6 +31,7 @@ asyncFunction(foo, cb()){
 ```
 Creating a callback that I can pass into a method expecting an error-first callback and expose a promise.
 ``` javascript
+var cbQ = require('cb-q');
 var callback = cbQ.cb();
 callback.promise.then(function(result){
     //handle success
