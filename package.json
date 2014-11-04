@@ -20,11 +20,9 @@
   "author": "Jhorlin De Armas",
   "license": "MIT",
   "dependencies": {
-    "mocha-lcov-reporter": "0.0.1",
     "q": "^1.0.1"
   },
   "devDependencies": {
-    "coveralls": "^2.11.2",
     "istanbul": "^0.3.2",
     "mocha": "^1.21.5",
     "should": "^4.0.4"
