@@ -1,6 +1,9 @@
 cb-q
 ===
 
+[![NPM version](https://badge.fury.io/js/transform-header.svg)](http://badge.fury.io/js/cb-q)
+[![Build Status](https://travis-ci.org/Jhorlin/cb-q.svg?branch=master)](https://travis-ci.org/Jhorlin/cb-q)
+
 Use cb-q to handle callbacks as a deferred object when a callback exists or create a deferred object when a callback does not exist.
 ## install
 ```
